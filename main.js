@@ -59,7 +59,7 @@ const createWindow = () => {
 
   // win.maximize();
 
-  // win.setMenuBarVisibility(false);
+  win.setMenuBarVisibility(false);
   win.loadFile(path.join(__dirname, "client", "index.html"));
   win.webContents.on("did-finish-load", () => {
     console.log("Page has loaded!");
