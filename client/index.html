@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Insurance App - By Mert Sami</title>
+  </head>
+  <body>
+    <h1 class="title1">Insurance App - By Mert Sami</h1>
+    <div id="context-menu" class="context-menu hidden">
+      <div id="correct-record-btn" class="context-item">Редактирай</div>
+      <div id="delete-record-btn" class="context-item">Изтрий запис</div>
+    </div>
+    <div class="controls">
+      <select class="search-by-month-input" id="search-by-month-input">
+        <option value="Всички">Всички</option>
+        <option value="Януари">Януари</option>
+        <option value="Февруари">Февруари</option>
+        <option value="Март">Март</option>
+        <option value="Април">Април</option>
+        <option value="Май">Май</option>
+        <option value="Юни">Юни</option>
+        <option value="Юли">Юли</option>
+        <option value="Август">Август</option>
+        <option value="Септември">Септември</option>
+        <option value="Октомври">Октомври</option>
+        <option value="Ноември">Ноември</option>
+        <option value="Декември">Декември</option>
+      </select>
+      <button id="button-search-by-license-plate">Потърси Рег. номер</button>
+      <!-- <button id="button-search-by-policy">Потърси полиц</button> -->
+      <!-- <button id="button-search-by-date">Потърси дата</button> -->
+      <button id="button-update" class="update-btn">Запази редакция</button>
+      <button id="button-save" class="save-btn">Нов</button>
+      <label for="record-limit">Лимит:</label>
+      <select class="record-load-limit-input" name="record-limit" id="record-limit">
+        <option value="100">100</option>
+        <option value="100">500</option>
+        <option value="100">1000</option>
+        <option value="100">5000</option>
+        <option value="-1">Няма</option>
+      </select>
+      <!-- <button id="button-delete" class="delete-btn">Изтрий полиц</button> -->
+    </div>
+    <table id="maintable" class="maintable">
+      <tr class="primary-tr">
+        <th class="primary">Месец</th>
+        <th class="primary">Номер на полица</th>
+        <th class="primary" title="Регистрационен Номер">Рег. Номер</th>
+        <th class="primary">Име</th>
+        <th class="primary">Дата на сключване</th>
+        <th class="primary" title="Брой вноски">Бр. вноски</th>
+        <th class="primary">Дати за плащане</th>
+        <th class="primary">Дата на изтичане</th>
+        <th class="primary" title="Телефонен номер">Тел. номер</th>
+        <th class="primary">Отстъпка</th>
+        <th class="primary">Цена</th>
+      </tr>
+      <tr class="input-row">
+        <th id="month-input-info">Септември</th>
+        <th>
+          <input
+            class="input"
+            type="text"
+            id="id-input"
+            placeholder="№ Полиц"
+          />
+        </th>
+        <th>
+          <input
+            class="input"
+            type="text"
+            id="license-plate-input"
+            placeholder="Рег Номер"
+          />
+        </th>
+        <th>
+          <input
+            class="input"
+            type="text"
+            id="fullname-input"
+            placeholder="Име"
+          />
+        </th>
+        <th>
+          <input class="input" type="date" id="date-of-conclusion-input" />
+        </th>
+        <th>
+          <select class="input" id="payment-input">
+            <option value="1">Едно</option>
+            <option value="2">Две</option>
+            <option value="4">Четири</option>
+          </select>
+        </th>
+        <th id="dates-for-payment-inputinfo">-</th>
+        <th>
+          <input
+            class="input"
+            type="date"
+            id="date-of-expiration-input"
+            disabled
+          />
+        </th>
+        <th>
+          <input
+            class="input"
+            type="text"
+            id="pnumber-input"
+            placeholder="Тел."
+          />
+        </th>
+        <th>
+          <select class="input" id="discount-input">
+            <option value="няма">Няма</option>
+            <option value="болница">Болница</option>
+            <option value="училище">Училище</option>
+            <option value="полицай">Полицай</option>
+            <option value="пожарникар">Пожарникар</option>
+            <option value="ловец">Ловец</option>
+            <option value="военен">Военен</option>
+            <option value="x">X</option>
+          </select>
+        </th>
+        <th>
+          <input
+            class="input"
+            type="number"
+            id="price-input"
+            placeholder="Цена"
+          />
+        </th>
+      </tr>
+      <!-- <tr>
+        <th colspan="10"></th>
+      </tr> -->
+    </table>
+
+    <script src="renderer.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
