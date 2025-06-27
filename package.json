@@ -6,7 +6,10 @@
   "scripts": {
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "package": "build"
+    "package": "build",
+    "linux": "electron-builder --linux",
+    "mac": "electron-builder --mac",
+    "windows": "electron-builder"
   },
   "author": "Mert Sami",
   "license": "ISC",
